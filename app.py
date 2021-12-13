@@ -152,7 +152,7 @@ def event_handle(event):
         if msg == "สวัสดี" :
             ReplyObj = TextSendMessage(text="เออ ดีด้วย")
         elif msgType == "กินข้าวมั้ย" :
-            line_bot_api.Reply_message(rtoken,ReplyObj)
+            ReplyObj = TextSendMessage(text="ไม่อ่ะ")
         elif msgType == "ไปเที่ยวมั้ย" :
             ReplyObj = TextSendMessage(text="ไปดิ")
         else :
