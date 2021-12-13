@@ -149,9 +149,15 @@ def event_handle(event):
 
     if msgType == "text":
         msg = str(event["message"]["text"])
-        if msg == "อย่างสีเหลือง" :
-            ReplyObj = TextSendMessage(text="เยลโล่")
-        line_bot_api . Reply_message ( rtoken , ReplyObj )
+        if msg == "สวัสดี" :
+            ReplyObj = TextSendMessage(text="เออ ดีด้วย")
+        elif msgType == "กินข้าวมั้ย" :
+            line_bot_api.Reply_message(rtoken,ReplyObj)
+        elif msgType == "ไปเที่ยวมั้ย" :
+            ReplyObj = TextSendMessage(text="ไปดิ")
+        else :
+            ReplyObj = TextSendMessage(text=msg)
+        line_bot_api.Reply_message(rtoken,ReplyObj)
     elif msgType == "image":
         try:
             message_content = line_bot_api.get_message_content(event['message']['id'])
